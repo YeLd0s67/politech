@@ -1,0 +1,102 @@
+@extends('layouts.app')
+
+@section('content')
+    <h3 align="center">Оқытушылардың санатын есепке алу</h3>
+    <br/>
+    @auth
+        <div class="flex justify-center">
+            <div class="w-8/12 bg-white p-6 rounded-lg">
+                <div class="input-report rounded">
+                    <input type="search" id="search" onkeyup="search()" class="form-control rounded" placeholder="Іздеу" aria-label="Search"
+                      aria-describedby="search-addon" />
+                </div>
+                    <table id="report_table" class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th id="id" scope="col">#</th>
+                                <th scope="col">Оқытушының аты жөні</th>
+                                <th scope="col">Санаты</th>
+                                <th scope="col">Санаты берілген мерзімі</th>
+                                <th scope="col">Санаты аяқталған мерзімі</th>
+                                <th scope="col">Сертификат номері № </th>
+                                <th scope="col">Сертификаттың суреті</th>
+                                <th scope="col">Әрекет</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($reports as $key => $report )
+                                <tr id={{ $report->id }}>
+                                    <td scope="row">{{ ++$key }}</td>
+                                    <td scope="row">{{ $report->name }}</td>
+                                    <td scope="row">{{ $report->sanat }}</td>
+                                    <td scope="row">{{ $report->sanat_start_date }}</td>
+                                    <td scope="row">{{ $report->sanat_end_date }}</td>
+                                    <td scope="row">{{ $report->certificate_no }}</td>
+                                    <td scope="row"><img src="{{ url('/images/'.$report->certificate_picture) }}" alt="Image"/></td>
+                                    <td scope="row"><button id="del" value="{{ $report->id }}" class="btn btn-danger btn-md" onclick="deletereport({{ $report->id }})">Жою</button></td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                <br/>
+                <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('structure.insert') }}">Оқытушылардың санатын еңгізу</a></button>
+            </div>
+        </div>
+    @endauth
+    @guest
+    <div class="flex justify-center">
+        <div class="w-8/12 bg-white p-6 rounded-lg">
+            Жұмыс жасау үшін, Кіру немес Тіркелу керек
+        </div>
+    </div>  
+    @endguest
+
+    <script>
+        jQuery(document).ready(function($) {
+            $("#more").click(function() {
+                $(this).attr("value")
+            });
+        });
+    </script>
+    <script>
+        let deletereport = (id) => {
+            if (confirm('Жою?')) {
+                $.ajax({
+                    type: "POST",
+                    url: "/second/structure/delete",
+                    headers: {"X-CSRF-TOKEN": "{{ csrf_token() }}"},
+                    data: {'report_id': id},
+                    success: status_code => {
+                        if (status = 200) {
+                            window.location.reload(true);
+                        } else {
+                            alert("Упс... Қайта көріңіз");
+                        }
+                    }
+                });
+            }
+        } 
+    </script>
+    <script>
+        function search() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("report_table");
+            tr = table.getElementsByTagName("tr");
+            
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+@endsection
