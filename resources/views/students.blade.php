@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+    <h3 align="center">Студенттер</h3>
+    <br/>
     @auth
         <div class="flex justify-center">
             <div class="form-group">
@@ -60,8 +62,8 @@
                     </table>
                     {{ $students->links() }}
                     <br/>
-                    <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('student.insert') }}">Студент еңгізу</a></button>
-                    <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('student.achives') }}">Студент жетістіктері</a></button>
+                    <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('student.insert') }}">Студент енгізу</a></button>
+                    <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('student.achives') }}">Студенттердің жетістіктері</a></button>
 
                 </div>
             </div>

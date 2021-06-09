@@ -29,7 +29,7 @@
 
                 <button class="btn btn-primary" id="download" type="submit">Оқу жоспарын жүктеу</button>
         </div>
-        <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('plans.insert') }}">Жоспар еңгізу</a></button>
+        <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('plans.insert') }}">Жоспар енгізу</a></button>
     </div>
     @endauth
     @guest

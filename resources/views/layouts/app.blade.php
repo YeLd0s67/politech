@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posty</title>
+    <title>ЦИКЛДІК ӘДІСТЕМЕЛІК КОМИССИЯ автоматтандырылған ақпараттық жүйесі</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -33,21 +33,22 @@
         <a href="{{ route('home') }}" class="text-white font-extrabold text-3xl	">
             <img src="/images/logo.png" width="200" height="75" style="border-radius: 10px"> 
         </a>
+        <p class="text-white text-1xl p-3">"Цикілдік әдістемелік комиссия" автоматтандырылған ақпараттық жүйесі</p>
         <ul class="flex items-center">
             @auth
                 <li>
-                    <a href="" class="text-white p-3 no-underline hover:underline ">{{ auth()->user()->name }}</a>
+                    <a href="" class="text-white text-2xl p-3 no-underline hover:underline ">{{ auth()->user()->name }}</a>
                 </li>
                 <li>
                     <form action="{{ route('logout') }}" method="POST" class="text-white p-3 inline">
                         @csrf
-                        <button type="submit" class="bg-white rounded-lg p-1 text-gray-900 transform hover:scale-110 motion-reduce:transform-none" href="{{ route('logout') }}" >Шығу</button>
+                        <button type="submit" class="text-2xl bg-white rounded-lg p-1 text-gray-900 transform hover:scale-110 motion-reduce:transform-none" href="{{ route('logout') }}" >Шығу</button>
                     </form>
                 </li>
             @endauth
             @guest
                 <li>
-                    <a href="{{ route('login') }}" class="text-white p-3 no-underline hover:underline ">Кіру</a>
+                    <a href="{{ route('login') }}" class="text-white text-2xl p-3 no-underline hover:underline ">Кіру</a>
                 </li>
                 {{-- <li>
                     <a href="{{ route('register') }}" class="p-3 text-white	no-underline hover:underline ">Тіркелу</a>
@@ -61,48 +62,48 @@
         @if (auth()->user()->isZhuldyz())
             <ul style="text-align: center">
                 <li style="display: inline-block;">
-                    <a href="{{ route('teacher') }}" class="text-white p-3 no-underline hover:underline ">Оқытушылар</a>
+                    <a href="{{ route('teacher') }}" class="text-white text-2xl p-3 no-underline hover:underline ">Оқытушылар</a>
                 </li>
                 <li style="display: inline-block;">
-                    <a href="{{ route('plans') }}" class="text-white p-3 no-underline hover:underline ">Оқу жұмыс жоспарлары </a>
+                    <a href="{{ route('plans') }}" class="text-white text-2xl p-3 no-underline hover:underline ">Оқу жұмыс жоспарлары </a>
                 </li>
                 <li style="display: inline-block;">
-                    <a href="{{ route('subjects') }}" class="text-white p-3 no-underline hover:underline ">Пәндер</a>
+                    <a href="{{ route('subjects') }}" class="text-white text-2xl p-3 no-underline hover:underline ">Пәндер</a>
                 </li>
                 <li style="display: inline-block;">
-                    <a href="{{ route('profs') }}" class="text-white p-3 no-underline hover:underline ">Мамандықтар</a>
+                    <a href="{{ route('profs') }}" class="text-white text-2xl p-3 no-underline hover:underline ">Мамандықтар</a>
                 </li>
                 <li style="display: inline-block;">
-                    <a href="{{ route('groups') }}" class="text-white p-3 no-underline hover:underline ">Топтар</a>
+                    <a href="{{ route('groups') }}" class="text-white text-2xl p-3 no-underline hover:underline ">Топтар</a>
                 </li>
                 <li style="display: inline-block;">
-                    <a href="{{ route('students') }}" class="text-white p-3 no-underline hover:underline ">Студенттер</a>
+                    <a href="{{ route('students') }}" class="text-white text-2xl p-3 no-underline hover:underline ">Студенттер</a>
                 </li>
                 <li style="display: inline-block;">
-                    <a href="{{ route('reports') }}" class="text-white p-3 no-underline hover:underline ">Есептер</a>
+                    <a href="{{ route('reports') }}" class="text-white text-2xl p-3 no-underline hover:underline ">Есептер</a>
                 </li>
             </ul>
         @elseif (auth()->user()->isRaushan()))
-        <ul style="text-align: center">
-            <li style="display: inline-block;">
-                <a href="{{ route('second.teacher') }}" class="text-white p-3 no-underline hover:underline ">Оқытушылар туралы мәлімет</a>
-            </li>
-            <li style="display: inline-block;">
-                <a href="{{ route('employment') }}" class="text-white p-3 no-underline hover:underline ">Қосымша лауазым </a>
-            </li>
-            <li style="display: inline-block;">
-                <a href="{{ route('courses') }}" class="text-white p-3 no-underline hover:underline ">Біліктілігін арттыру курсы</a>
-            </li>
-            <li style="display: inline-block;">
-                <a href="{{ route('structure') }}" class="text-white p-3 no-underline hover:underline ">Оқытушылардың санатын есепке алу</a>
-            </li>
-            <li style="display: inline-block;">
-                <a href="{{ route('internships') }}" class="text-white p-3 no-underline hover:underline ">Оқытушылардың тағлымдамадан өтуі</a>
-            </li>
-            <li style="display: inline-block;">
-                <a href="{{ route('achivements') }}" class="text-white p-3 no-underline hover:underline ">Оқытушылардың жетістіктері</a>
-            </li>
-        </ul>
+            <ul style="text-align: center">
+                <li style="display: inline-block;">
+                    <a href="{{ route('second.teacher') }}" class="text-white text-2xl p-3 no-underline hover:underline ">Оқытушылар туралы мәлімет</a>
+                </li>
+                <li style="display: inline-block;">
+                    <a href="{{ route('employment') }}" class="text-white text-2xl p-3 no-underline hover:underline ">Қосымша лауазым </a>
+                </li>
+                <li style="display: inline-block;">
+                    <a href="{{ route('courses') }}" class="text-white text-2xl p-3 no-underline hover:underline ">Біліктілігін арттыру курсы</a>
+                </li>
+                <li style="display: inline-block;">
+                    <a href="{{ route('structure') }}" class="text-white text-2xl p-3 no-underline hover:underline ">Оқытушылардың санатын есепке алу</a>
+                </li>
+                <li style="display: inline-block;">
+                    <a href="{{ route('internships') }}" class="text-white text-2xl p-3 no-underline hover:underline ">Оқытушылардың тағлымдамадан өтуі</a>
+                </li>
+                <li style="display: inline-block;">
+                    <a href="{{ route('achivements') }}" class="text-white text-2xl p-3 no-underline hover:underline ">Оқытушылардың жетістіктері</a>
+                </li>
+            </ul>
         @endif
         @endauth
     </nav>

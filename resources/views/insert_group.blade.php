@@ -3,7 +3,7 @@
 @section('content')
     @auth
         
-    <h3 align="center">Топ еңгізу</h3>
+    <h3 align="center">Топ енгізу</h3>
     <br/>        
     <div class="flex justify-center">
         <div class="w-8/12 bg-white p-6 rounded-lg">
@@ -42,7 +42,7 @@
                     <input type="text" name="advisor" id="advisor" class="form-control" value="" />
                 </div>
                 <div align="right" class="form-group">
-                    <input style="color: white" type="submit" name="send" class="btn btn-info" value="Еңгізу" />
+                    <input style="color: white" type="submit" name="send" class="btn btn-info" value="Енгізу" />
                 </div>             
             </form>
         </div>

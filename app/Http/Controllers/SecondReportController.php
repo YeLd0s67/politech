@@ -170,7 +170,33 @@ class SecondReportController extends Controller
     SecondReportsStruc::insert($data);
 
     return redirect()->back();
-    } 
+    }
+    
+    public function downloadSecondStruclist(Request $request)
+    {
+        $strucs = SecondReportsStruc::where('sanat', $request->sanat)
+                            ->get();
+        // dd($students);
+        $filename = 'санат.csv';
+        $handle = fopen('санат.csv', 'w+');
+        $columns = array('Оқытушының аты жөні', 'Санаты', 'Санаты берілген мерзімі', 'Санаты аяқталған мерзімі', 'Сертификат номері №');
+        fputcsv($handle, $columns);
+        foreach ($strucs as $struc){    
+            fputcsv($handle, array(
+                                $struc->name,
+                                $struc->sanat, 
+                                $struc->sanat_start_date,
+                                $struc->sanat_end_date,
+                                $struc->certificate_no
+                            )
+                    );
+        }
+        fclose($handle);
+        $headers = array(
+            'Content-Type' => 'text/csv',
+        );
+        return response()->download($filename, 'санат.csv', $headers);
+    }
 
 //Internship
 
@@ -199,7 +225,8 @@ class SecondReportController extends Controller
             'date' => 'required',
             'end_date' => 'required',
             'message' => 'required',
-            'pic' => 'required|mimes:png,jpg,jpeg|max:2048'
+            'pic' => 'required|mimes:png,jpg,jpeg|max:2048',
+            'year' => 'required',
 
         ]); 
 
@@ -224,13 +251,42 @@ class SecondReportController extends Controller
         "date" => $request->date,
         "end_date" => $request->end_date,
         "message" => $request->message,
-        "pic" => $filename
+        "pic" => $filename,
+        "year" => $request->year
 
         );
         SecondReportInternships::insert($data);
 
         return redirect()->back();
     } 
+    public function downloadSecondInternlist(Request $request)
+    {
+        $internships = SecondReportInternships::where('year', $request->year)
+                            ->get();
+        // dd($students);
+        $filename = 'тағлымдама.csv';
+        $handle = fopen('тағлымдама.csv', 'w+');
+        $columns = array('Педагогтің тегі, аты, әкесінің аты', 'Тағылымдама өтілу мамандығы', 'Тағылымдама өтілу орны', 'Тағылымдама өтілу лауазымы', 'Тағылымдама өтілу мерзімі', 'Аяқталу мерзімі', 'Хаттама №', 'Жылы');
+        fputcsv($handle, $columns);
+        foreach ($internships as $internship){    
+            fputcsv($handle, array(
+                                $internship->name,
+                                $internship->prof, 
+                                $internship->place,
+                                $internship->employement,
+                                $internship->date,
+                                $internship->end_date,
+                                $internship->message, 
+                                $internship->year
+                            )
+                    );
+        }
+        fclose($handle);
+        $headers = array(
+            'Content-Type' => 'text/csv',
+        );
+        return response()->download($filename, 'тағлымдама.csv', $headers);
+    }
     
 //Achivements
 
@@ -294,5 +350,35 @@ class SecondReportController extends Controller
             SecondReportAchivement::insert($data);
 
         return redirect()->back();
+    }
+
+    public function downloadSecondAchivelist(Request $request)
+    {
+        $achives = SecondReportAchivement::where('year', $request->year)
+                            ->get();
+        // dd($students);
+        $filename = 'жетістіктер.csv';
+        $handle = fopen('жетістіктер.csv', 'w+');
+        $columns = array('Оқытушының аты жөні', 'Тақырып атауы', 'Байқау атауы', 'Өткен жері', 'Жылы', 'Байқау деңгейі', 'Алған орны', 'Өтілген уақыты', 'Куәлік');
+        fputcsv($handle, $columns);
+        foreach ($achives as $achive){    
+            fputcsv($handle, array(
+                                $achive->name,
+                                $achive->topic, 
+                                $achive->contest,
+                                $achive->place,
+                                $achive->year,
+                                $achive->level,
+                                $achive->date, 
+                                $achive->win,
+                                $achive->id_no
+                            )
+                    );
+        }
+        fclose($handle);
+        $headers = array(
+            'Content-Type' => 'text/csv',
+        );
+        return response()->download($filename, 'жетістіктер.csv', $headers);
     }
 }

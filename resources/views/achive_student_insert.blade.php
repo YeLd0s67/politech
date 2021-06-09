@@ -10,7 +10,7 @@
     @endguest
     @auth
 
-    <h3 align="center">Студент жетістігін еңгізу</h3>
+    <h3 align="center">Студент жетістігін енгізу</h3>
     <br/>        
     <div class="flex justify-center">
         <div class="w-8/12 bg-white p-6 rounded-lg">
@@ -89,7 +89,7 @@
                     </select>
                 </div>
                 <div align="right" class="form-group">
-                    <input style="color: white" type="submit" name="send" class="btn btn-info" value="Еңгізу" />
+                    <input style="color: white" type="submit" name="send" class="btn btn-info" value="Енгізу" />
                 </div>             
             </form>
         </div>

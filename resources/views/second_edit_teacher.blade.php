@@ -558,7 +558,7 @@
                     </div>   
                 @endforeach
                 <div align="right" class="form-group">
-                    <input style="color: white" type="submit" name="send" class="btn btn-info" value="Еңгізу" />
+                    <input style="color: white" type="submit" name="send" class="btn btn-info" value="Енгізу" />
                 </div>             
             </form>
         </div>

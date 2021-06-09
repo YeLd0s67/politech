@@ -80,7 +80,7 @@
                 </table>
             <br/>
             <button class="btn btn-primary" type="submit">
-                <a class="text-white" href="{{ route('subjects.insert') }}">Пән еңгізу</a>
+                <a class="text-white" href="{{ route('subjects.insert') }}">Пән енгізу</a>
             </button>
         </div>
 

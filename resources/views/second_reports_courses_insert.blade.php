@@ -2,7 +2,7 @@
 
 @section('content')
     
-    <h3 align="center">Біліктілік курстарын еңгізу</h3>
+    <h3 align="center">Біліктілік курстарын енгізу</h3>
     <br/>
     @auth
     <div class="flex justify-center">
@@ -50,8 +50,8 @@
                 <div class="form-group">
                     <label>Өтілу түрі</label>
                     <select class="form-select" aria-label="Default select example" name="type" id="type">
-                        <option value="очная">очная</option>
-                        <option value="қашықтықтан">қашықтықтан</option>
+                        <option value="Күндізгі">Күндізгі</option>
+                        <option value="қашықтықтан">Қашықтықтан</option>
                     </select> 
                 </div>
 
@@ -104,7 +104,7 @@
                 </div>
                   <div class="form-group">
                     <div class="col-md-6">
-                      <input type="submit" name="submit" value='Еңгізу' class='btn btn-success'>
+                      <input type="submit" name="submit" value='Енгізу' class='btn btn-success'>
                     </div>
                   </div>
             </form>

@@ -2,7 +2,7 @@
 
 @section('content')
     
-    <h3 align="center">Оқытушылардың сандық және сапалық құрамын еңгізу</h3>
+    <h3 align="center">Оқытушылардың сандық және сапалық құрамын енгізу</h3>
     <br/>
     @auth
     <div class="flex justify-center">
@@ -84,7 +84,7 @@
 
                   <div class="form-group">
                     <div class="col-md-6">
-                      <input type="submit" name="submit" value='Еңгізу' class='btn btn-success'>
+                      <input type="submit" name="submit" value='Енгізу' class='btn btn-success'>
                     </div>
                   </div>
             </form>

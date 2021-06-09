@@ -23,6 +23,7 @@ class CreateSecondReportInternshipsTable extends Migration
             $table->string('end_date');
             $table->string('message');
             $table->string('pic');
+            $table->string('year');
             $table->timestamps();
         });
     }

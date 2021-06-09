@@ -6,6 +6,19 @@
     @auth
         <div class="flex justify-center">
             <div class="w-8/12 bg-white p-6 rounded-lg">
+                <div class="form-group">
+                    <form method="GET" action="{{ route('internships.list') }}">
+                        {{ csrf_field() }}
+                        <label>Жылы</label>
+                        <input type="text" name="year" id="year" class="form-control" value="" />
+                        <div class="form-group">
+                            <div class="col-md-6">
+                              <input type="submit" name="download" value='Жүктеу' class='btn btn-success'>
+                            </div>
+                        </div>
+                    </form>
+        
+                </div>
                 <div class="input-internship rounded">
                     <input type="search" id="search" onkeyup="search()" class="form-control rounded" placeholder="Іздеу" aria-label="Search"
                       aria-describedby="search-addon" />
@@ -22,6 +35,7 @@
                                 <th scope="col">Аяқталу мерзімі</th>
                                 <th scope="col">Хаттама №</th>
                                 <th scope="col">Куәлік суреті</th>
+                                <th scope="col">Жылы</th>
                                 <th scope="col">Әрекет</th>
                             </tr>
                         </thead>
@@ -37,13 +51,14 @@
                                     <td scope="row">{{ $internship->end_date }}</td>
                                     <td scope="row">{{ $internship->message }}</td>
                                     <td scope="row"><img src="{{ url('/images/'.$internship->pic) }}" alt="Image"/></td>
+                                    <td scope="row">{{ $internship->year }}</td>
                                     <td scope="row"><button id="del" value="{{ $internship->id }}" class="btn btn-danger btn-md" onclick="deleteinternship({{ $internship->id }})">Жою</button></td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
                 <br/>
-                <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('internships.insert') }}">Тағылымдамаларды еңгізу</a></button>
+                <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('internships.insert') }}">Тағылымдамаларды енгізу</a></button>
             </div>
         </div>
     @endauth

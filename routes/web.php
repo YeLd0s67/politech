@@ -13,6 +13,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/welcome', function () {
+    return view('welcome');
+})->name('welcome');
+
 Route::post('/logout', 'Auth\LogoutController@store') -> name('logout');
 Route::get('/login', 'Auth\LoginController@index') -> name('login');
 Route::post('/login', 'Auth\LoginController@store');
@@ -128,14 +132,17 @@ Route::middleware(['raushan'])->prefix('second')->group(function () {
     Route::post('/structure/delete', 'SecondReportController@delete_structure');
     Route::get('/structure/insert', 'SecondReportController@insert_view_structure') -> name('structure.insert');
     Route::post('/structure/store', 'SecondReportController@store_reports_structure') -> name('structure.store');
+    Route::get('/structure/get_list', 'SecondReportController@downloadSecondStruclist') -> name('structure.list');
 
     Route::get('/internships', 'SecondReportController@view_internships') -> name('internships');
     Route::post('/internships/delete', 'SecondReportController@delete_internships');
     Route::get('/internships/insert', 'SecondReportController@insert_view_internships') -> name('internships.insert');
     Route::post('/internships/store', 'SecondReportController@store_reports_internships') -> name('internships.store');
+    Route::get('/internships/get_list', 'SecondReportController@downloadSecondInternlist') -> name('internships.list');
 
     Route::get('/achivements', 'SecondReportController@view_achivements') -> name('achivements');
     Route::post('/achivements/delete', 'SecondReportController@delete_achivements');
     Route::get('/achivements/insert', 'SecondReportController@insert_view_achivements') -> name('achivements.insert');
     Route::post('/achivements/store', 'SecondReportController@store_reports_achivements') -> name('achivements.store');
+    Route::get('/achivements/get_list', 'SecondReportController@downloadSecondAchivelist') -> name('achivements.list');
 });

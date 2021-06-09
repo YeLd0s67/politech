@@ -6,6 +6,29 @@
     @auth
         <div class="flex justify-center">
             <div class="w-8/12 bg-white p-6 rounded-lg">
+                <div class="form-group">
+                    <form method="GET" action="{{ route('structure.list') }}">
+                        {{ csrf_field() }}
+                        <label>Санаты</label>
+                        <select class="form-select" aria-label="Default select example" name="sanat" id="sanat">
+                            <option value="Cанаты жоқ">Cанаты жоқ</option>
+                            <option value="Екінші санатты">Екінші санатты</option>
+                            <option value="Бірінші санатты">Бірінші санатты</option>
+                            <option value="Жоғары санатты">Жоғары санатты</option>
+                            <option value="Педагог">Педагог</option>
+                            <option value="Педагог - модератор">Педагог - модератор</option>
+                            <option value="Педагог – сарапшы">Педагог – сарапшы</option>
+                            <option value="Педагог – зерттеуші">Педагог – зерттеуші</option>
+                            <option value="Педагог – шебер">Педагог – шебер</option>
+                        </select>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                              <input type="submit" name="download" value='Жүктеу' class='btn btn-success'>
+                            </div>
+                        </div>
+                    </form>
+        
+                </div>
                 <div class="input-report rounded">
                     <input type="search" id="search" onkeyup="search()" class="form-control rounded" placeholder="Іздеу" aria-label="Search"
                       aria-describedby="search-addon" />
@@ -40,7 +63,7 @@
                         </tbody>
                     </table>
                 <br/>
-                <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('structure.insert') }}">Оқытушылардың санатын еңгізу</a></button>
+                <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('structure.insert') }}">Оқытушылардың санатын енгізу</a></button>
             </div>
         </div>
     @endauth

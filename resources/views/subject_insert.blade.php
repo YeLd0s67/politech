@@ -2,7 +2,7 @@
 
 @section('content')
     
-    <h3 align="center">Пән Еңгізу</h3>
+    <h3 align="center">Пән Енгізу</h3>
     <br/>
     @auth
     <div class="flex justify-center">
@@ -72,7 +72,7 @@
                 </div>
                   <div class="form-group">
                     <div class="col-md-6">
-                      <input type="submit" name="submit" value='Еңгізу' class='btn btn-success'>
+                      <input type="submit" name="submit" value='Енгізу' class='btn btn-success'>
                     </div>
                   </div>
             </form>

@@ -37,7 +37,7 @@
                         </tbody>
                     </table>
                 <br/>
-                <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('reports.activity.insert') }}">Медиажоспар еңгізу</a></button>
+                <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('reports.activity.insert') }}">Медиажоспар енгізу</a></button>
             </div>
         </div>
     @endauth

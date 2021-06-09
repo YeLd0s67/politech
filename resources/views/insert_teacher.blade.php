@@ -48,7 +48,7 @@
                 <div class="form-group">
                     <label>Жынысы</label>
                     <select class="form-select" aria-label="Default select example" name="gender" id="gender">
-                        <option value="Еркек" selected>Еркек</option>
+                        <option value="Ер" selected>Ер</option>
                         <option value="Әйел">Әйел</option>
                     </select>                
                 </div>
@@ -120,7 +120,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-check-label" for="flexCheckDefault">
-                        ЖОО-да оқиды (в текущий период)
+                        ЖОО-да оқиды (АҒЫМДЫҚ МЕРЗІМДЕ)
                     </label>
                     <select class="form-select" aria-label="Default select example" name="study" id="educ">
                         <option value="Иә">Иә</option>
@@ -193,7 +193,7 @@
                     </select> 
                 </div>   
                 <div align="right" class="form-group">
-                    <input style="color: white" type="submit" name="send" class="btn btn-info" value="Еңгізу" />
+                    <input style="color: white" type="submit" name="send" class="btn btn-info" value="Енгізу" />
                 </div>             
             </form>
         </div>

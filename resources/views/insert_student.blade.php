@@ -2,7 +2,7 @@
 
 @section('content')
     
-    <h3 align="center">Студент еңгізу</h3>
+    <h3 align="center">Студент енгізу</h3>
     <br/>   
     @auth
     <div class="flex justify-center">
@@ -51,7 +51,7 @@
                     </select>
                 </div>
                 <div align="right" class="form-group">
-                    <input style="color: white" type="submit" name="send" class="btn btn-info" value="Еңгізу" />
+                    <input style="color: white" type="submit" name="send" class="btn btn-info" value="Енгізу" />
                 </div>             
             </form>
         </div>

@@ -65,7 +65,7 @@
                         </tbody>
                     </table>
                 <br/>
-                <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('courses.insert') }}">Біліктілік курстарын еңгізу</a></button>
+                <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('courses.insert') }}">Біліктілік курстарын енгізу</a></button>
             </div>
         </div>
     @endauth

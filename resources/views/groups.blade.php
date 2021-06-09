@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+    <h3 align="center">Топтар</h3>
+    <br/>
     @auth
         <div class="flex justify-center">
             <div class="w-8/12 bg-white p-6 rounded-lg">
@@ -34,7 +36,7 @@
                         </tbody>
                     </table>
                 <br/>
-                <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('group.insert') }}">Топ еңгізу</a></button>
+                <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('group.insert') }}">Топ енгізу</a></button>
             </div>
         </div>
     @endauth

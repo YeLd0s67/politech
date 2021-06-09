@@ -58,7 +58,7 @@
                         </tbody>
                     </table>
                 <br/>
-                <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('reports.achivements.insert') }}">Оқытушылардың жетістіктерін еңгізу</a></button>
+                <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('reports.achivements.insert') }}">Оқытушылардың жетістіктерін енгізу</a></button>
             </div>
         </div>
     @endauth

@@ -6,6 +6,19 @@
     @auth
         <div class="flex justify-center">
             <div class="w-10/12 bg-white p-6 rounded-lg">
+                <div class="form-group">
+                    <form method="GET" action="{{ route('achivements.list') }}">
+                        {{ csrf_field() }}
+                        <label>Жылы</label>
+                        <input type="text" name="year" id="year" class="form-control" value="" />
+                        <div class="form-group">
+                            <div class="col-md-6">
+                              <input type="submit" name="download" value='Жүктеу' class='btn btn-success'>
+                            </div>
+                        </div>
+                    </form>
+        
+                </div>
                 <div class="input-achivement rounded">
                     <input type="search" id="search" onkeyup="search()" class="form-control rounded" placeholder="Іздеу" aria-label="Search"
                       aria-describedby="search-addon" />
@@ -48,7 +61,7 @@
                         </tbody>
                     </table>
                 <br/>
-                <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('achivements.insert') }}">Оқытушылардың жетістіктерін еңгізу</a></button>
+                <button class="btn btn-primary" type="submit"><a class="text-white" href="{{ route('achivements.insert') }}">Оқытушылардың жетістіктерін енгізу</a></button>
             </div>
         </div>
     @endauth

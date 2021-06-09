@@ -2,7 +2,7 @@
 
 @section('content')
     
-    <h3 align="center">Оқытушылардың тағлымдамадан өтуін еңгізу</h3>
+    <h3 align="center">Оқытушылардың тағлымдамадан өтуін енгізу</h3>
     <br/>
     @auth
     <div class="flex justify-center">
@@ -74,8 +74,13 @@
                 </div>
 
                 <div class="form-group">
+                    <label>Жылы</label>
+                    <input type="text" name="year" id="year" class="form-control" value="" />
+                </div>
+
+                <div class="form-group">
                     <div class="col-md-6">
-                      <input type="submit" name="submit" value='Еңгізу' class='btn btn-success'>
+                      <input type="submit" name="submit" value='Енгізу' class='btn btn-success'>
                     </div>
                 </div>
             </form>
