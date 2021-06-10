@@ -40,10 +40,10 @@
                 <div class="form-group">
                     <label>Топтар</label>
                     <select class="form-select" aria-label="Default select example" name="groups" id="groups">
-                      <option value="111" selected>111</option>
-                      {{-- @foreach ($profs as $profs)
-                        <option value="{{ $profs->groups }}" >{{ $profs->groups }}</option>
-                      @endforeach --}}
+                      {{-- <option value="111" selected>111</option> --}}
+                      @foreach ($groups as $group)
+                        <option value="{{ $group->group }}" >{{ $group->group }}</option>
+                      @endforeach
                     </select>  
                 </div>
                 <div class="form-group">

@@ -48,7 +48,7 @@
                 <div class="form-group">
                     <label>Жынысы</label>
                     <select class="form-select" aria-label="Default select example" name="gender" id="gender">
-                        <option value="Еркек" selected>Еркек</option>
+                        <option value="Ер" selected>Ер</option>
                         <option value="Әйел">Әйел</option>
                     </select>                
                 </div>

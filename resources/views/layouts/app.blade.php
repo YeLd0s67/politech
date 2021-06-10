@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ЦИКЛДІК ӘДІСТЕМЕЛІК КОМИССИЯ автоматтандырылған ақпараттық жүйесі</title>
+    <title>Жамбыл политехникалық жоғары колледжі</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -33,7 +33,7 @@
         <a href="{{ route('home') }}" class="text-white font-extrabold text-3xl	">
             <img src="/images/logo.png" width="200" height="75" style="border-radius: 10px"> 
         </a>
-        <p class="text-white text-1xl p-3">"Цикілдік әдістемелік комиссия" автоматтандырылған ақпараттық жүйесі</p>
+        <p class="text-white text-2xl p-3">Жамбыл политехникалық жоғары колледжі</p>
         <ul class="flex items-center">
             @auth
                 <li>

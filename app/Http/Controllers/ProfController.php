@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Subject;
 use App\Prof;
+use App\Group;
 use Illuminate\Support\Facades\Storage;
 use Session;
 use Illuminate\Http\Response;
@@ -19,9 +20,9 @@ class ProfController extends Controller
     }
 
     public function insert(){
-        $profs = Prof::all();
+        $groups = Group::all();
         return view('profs_insert', [
-            'profs' => $profs
+            'groups' => $groups
         ]);
     }
     
